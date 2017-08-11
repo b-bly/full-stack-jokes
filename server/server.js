@@ -2,17 +2,21 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
+var jokes = require('./routes/jokes.js');
+
 
 // serve back static files
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 // Parse post request (data becomes req.body)
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var port = 5000;
 
+// serve the jokes route
+app.use('/jokes', jokes);
 // Creating jokes array
-var jokes = [
+var jokesArr = [
   {
     whoseJoke: "Danny",
     jokeQuestion: "Why do scuba divers fall backwards out of boats?",
@@ -39,16 +43,6 @@ var jokes = [
     punchLine: "It was a shih tzu."
   }
 ];
-
-app.post('/postJoke', function(req, res) {
-  console.log('req.body: ' + req.body);
-  jokes.push(req.body);
-  res.send(201);
-});
-
-app.get('/getJokes', function(req, res) {
-  res.send(jokes);
-});
 
 // spinning up the server
 app.listen(port, function () {

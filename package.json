@@ -1,23 +1,27 @@
 {
-  "name": "new_code_challenge_2",
+  "name": "server",
   "version": "1.0.0",
-  "description": "new code challenge 2 launchpad",
-  "main": "index.js",
+  "description": "### Objectives - Initialize and spin up a server side node/express application, - Send requests to the server from client using an AJAX request(s), - Display response on the DOM, - Demonstrate the separation of logic between the client and the server.",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js"
   },
-  "keywords": [
-    "prime",
-    "tau",
-    "jquery",
-    "node",
-    "express"
-  ],
-  "author": "PrimeAcademy",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0"
-  }
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "pg": "^7.1.0",
+    "pm": "^2.2.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-bly/betelgeuse-code-challenge-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/b-bly/betelgeuse-code-challenge-2/issues"
+  },
+  "homepage": "https://github.com/b-bly/betelgeuse-code-challenge-2#readme"
 }

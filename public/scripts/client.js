@@ -16,7 +16,7 @@ getJokes();
   function postJoke() {
     $.ajax({
       type: 'POST',
-      url: '/postJoke',
+      url: '/jokes/postJoke',
       data: newJoke,
       success: function (response) {
         console.log(response);
@@ -34,9 +34,9 @@ getJokes();
     response.forEach(function(joke, i) {
       jokesHtml = 
         '<div class="aJoke">' +
-          '<h2>' + joke.whoseJoke + '</h2>' +
-          '<p>' + joke.jokeQuestion + '</p>' +
-          '<p>' + joke.punchLine + '</p>' +
+          '<p class="name">' + joke.whosejoke + '</p>' +
+          '<p>' + joke.jokequestion + '</p>' +
+          '<p>' + joke.punchline + '</p>' +
         '</div>';
         $('#outputDiv').prepend(jokesHtml);
     });
@@ -45,9 +45,9 @@ getJokes();
   function getJokes() {
     $.ajax({
       type: 'GET',
-      url: '/getJokes',
+      url: '/jokes/getJokes',
       success: function(response) {
-        console.log('getJokes response ' + response);
+        console.log('getJokes response ', response);
         prependJokes(response);
       }
     });
